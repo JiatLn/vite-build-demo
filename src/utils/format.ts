@@ -10,3 +10,7 @@ export function parseImageUrl(url: string) {
   const prefix = import.meta.env.VITE_IMG_URL
   return prefix + url
 }
+
+export function formatBlank(val: string) {
+  return val.replaceAll('$$', '____________')
+}

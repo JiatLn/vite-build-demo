@@ -1,22 +1,17 @@
-<script setup lang="tsx">
-const router = useRouter()
-const backHome = () => router.push({ name: 'Home' })
-
-const testTsx = (props: { title: string }) => {
-  return (
-    <div className="flex-c flex-col h-full">
-      <div className="text-[24px]">{props.title}</div>
-      <p className="text-[#666] mb-8px">this comp is tsx</p>
-      <div className="btn w-200px" onClick={backHome}>
-        back home
-      </div>
-    </div>
-  )
-}
+<script setup lang="ts">
+const message = ref<string>('test$$')
+const cnt = ref<number>(0)
 </script>
 
 <template>
-  <testTsx title="Login Page" />
+  <div h-full w-full flex="c col">
+    <div flex items-start gap-2>
+      <FillBankTextarea v-model:value="message" v-model:cnt="cnt" />
+    </div>
+    <p mt-8 text-gray-400>
+      This is a demo page, you can clear it and start coding~ :)
+    </p>
+  </div>
 </template>
 
 <style lang="less" scoped>
